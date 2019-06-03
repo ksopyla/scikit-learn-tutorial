@@ -54,14 +54,13 @@ print(skm.classification_report(y_true, y_pred, target_names=['label1==1', 'labe
 
 
 # 2 label multiclass problem
-y_true = np.array([
-                    [0,0], [1,1], [2,2], [1,1]
-                  ])
-y_pred = np.array([
-                    [0,0], [1,1], [2,2], [0,1]
-                  ])
-
-# multi label multi output not supported
+# !!!!! multi label multi output not supported
+# y_true = np.array([
+#                     [0,0], [1,1], [2,2], [1,1]
+#                   ])
+# y_pred = np.array([
+#                     [0,0], [1,1], [2,2], [0,1]
+#                   ])
 # cm = skm.multilabel_confusion_matrix(y_true, y_pred)
 # print(cm)
-print( skm.classification_report(y_true,y_pred, target_names=['label1==1', 'label2==1'] ))
+# print( skm.classification_report(y_true,y_pred, target_names=['label1==1', 'label2==1'] ))
