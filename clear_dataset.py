@@ -2,7 +2,7 @@
 import pandas as pd
 
 
-filename = "data/polish_sentiment_dataset.csv"
+filename = "./data/polish_sentiment_dataset.csv"
 
 dataset = pd.read_csv(filename, delimiter = ",")
  
@@ -45,8 +45,8 @@ rate_bad.hist(column='desc_len', bins=[0,10,20,50,100,200,500,1000])
 # count values in bins
 rate_bad['desc_len'].value_counts(bins=[0,100,200,30000])
 
-# take descriptions logner then 200 chars ~20K
-rb= rate_bad[rate_bad['desc_len']>=200]
+# take descriptions longer then 200 and shorter then 3500, there are aprox. 20K chars 
+rb= rate_bad[(rate_bad['desc_len']>=200) & (rate_bad['desc_len']<=3500)]
 
 
 #%%
@@ -61,9 +61,11 @@ rate_good.hist(column='desc_len', bins=[0,10,20,50,100,200,500,10000])
 rate_good['desc_len'].value_counts(bins=[0,100,200, 30000])
 
 # take descriptions logner then 200 chars ~42K
-rg= rate_good[rate_good['desc_len']>=200]
+rg= rate_good[(rate_good['desc_len']>=200) & (rate_good['desc_len']<=3500)]
 # sample from good comments, 
-#rate_good.sample(n=10)
+
+number_of_bad = rb.shape[0]
+rg = rg.sample(number_of_bad)
 
 #%%
 # concat two data frames
@@ -81,6 +83,7 @@ new_dataset.to_csv(filename, index=False)
 
 #%%
 # reopen the saved dataset
+filename = './data/polish_sentiment_shop_comments.csv'
 dataset = pd.read_csv(filename)
 #%%
 new_dataset.head()
