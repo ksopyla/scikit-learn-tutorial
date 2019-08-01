@@ -27,9 +27,9 @@ x_test_tfidf = tfidf.transform(x_test)
 #%%
 
 
-#clf = svm.SVC(C=1, gamma=0.01)
+clf = svm.SVC(C=1, gamma=0.01)
 #clf = SGDClassifier()
-clf = RandomForestClassifier(n_estimators=30)
+#clf = RandomForestClassifier(n_estimators=30)
 
 
 import datetime as dt
