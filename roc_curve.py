@@ -3,8 +3,8 @@ from sklearn import metrics
 import matplotlib.pyplot as plt
 
 y_true = np.array([0, 0, 1, 1,1])
-scores = np.array([0.1, 0.4, 0.35, 0.6, 0.8])
-fpr, tpr, thresholds = metrics.roc_curve(y_true, scores, pos_label=1)
+y_scores = np.array([0.1, 0.4, 0.35, 0.6, 0.8])
+fpr, tpr, thresholds = metrics.roc_curve(y_true, y_scores, pos_label=1)
 
 print(f'\nfpr={fpr}\ntpr={tpr}\ntre={thresholds}')
 
