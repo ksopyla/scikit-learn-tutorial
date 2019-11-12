@@ -8,8 +8,9 @@ fpr, tpr, thresholds = metrics.roc_curve(y_true, y_scores, pos_label=1)
 
 print(f'\nfpr={fpr}\ntpr={tpr}\ntre={thresholds}')
 
+
 for tr, tp, fp in zip(thresholds, tpr, fpr):
-    y_pred = (scores>=tr).astype(int)
+    y_pred = (y_scores>=tr).astype(int)
     cm = metrics.confusion_matrix(y_true, y_pred)
     print(cm)
     print(metrics.classification_report(y_true, y_pred))
