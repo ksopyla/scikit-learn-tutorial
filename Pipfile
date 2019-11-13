@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 pylint = "*"
 autopep8 = "*"
+jupyter = "*"
 
 [packages]
 scikit-learn = "*"
@@ -14,4 +15,4 @@ matplotlib = "*"
 pandas = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"
