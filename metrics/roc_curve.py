@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 
 y_true = np.array([0, 0, 1, 1,1])
 y_scores = np.array([0.1, 0.4, 0.35, 0.6, 0.8])
-fpr, tpr, thresholds = metrics.roc_curve(y_true, y_scores, pos_label=1)
+fpr, tpr, tresholds = metrics.roc_curve(y_true, y_scores, pos_label=1)
 
 print(f'\nfpr={fpr}\ntpr={tpr}\ntre={thresholds}')
 
 
-for tr, tp, fp in zip(thresholds, tpr, fpr):
+for tr, tp, fp in zip(tresholds, tpr, fpr):
     y_pred = (y_scores>=tr).astype(int)
     cm = metrics.confusion_matrix(y_true, y_pred)
     print(cm)
