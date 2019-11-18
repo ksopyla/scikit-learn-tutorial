@@ -21,7 +21,9 @@ print(y_pred)
 
 #%%
 
-precision0, recall0, tresholds0 = skm.precision_recall_curve(y_true, y_score, pos_label=0)
+# if we want to compute prec-recall for class 0, and treat it as positive class we need to negate
+# values in y_true that 0 becomes 1 or shift y_scores
+precision0, recall0, tresholds0 = skm.precision_recall_curve(y_true, 1-y_score, pos_label=0)
 
 precision1, recall1, tresholds1 = skm.precision_recall_curve(y_true, y_score, pos_label=1)
 
