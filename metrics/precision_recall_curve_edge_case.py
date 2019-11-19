@@ -1,5 +1,5 @@
 """Example of computing precision recall curve for random and ideal
-classificator.
+classifier.
 """
 # %%
 

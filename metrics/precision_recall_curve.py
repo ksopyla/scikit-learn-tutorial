@@ -51,5 +51,3 @@ plt.xlim([0.0, 1.0])
 plt.title('2-class Precision-Recall curve')
 plt.legend()
 plt.show()          
-
-# %%
