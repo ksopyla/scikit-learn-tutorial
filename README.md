@@ -1,6 +1,6 @@
 #  Scikit-learn tutorial
 
-Set of examples for scikit-learn selflearning.
+Set of examples for scikit-learn self-learning.
 
 ## Work in progress...
 
@@ -10,15 +10,15 @@ This tutorial is being created. It is not finished.
 
 ### Standard metrics precsion, recall, f1 measure - 
 
-Example shows how to compute basic classifier measures like: precision, recall, f1
+The example shows how to compute basic classifier measures like precision, recall, f1
 
 File: [metrics.py](/metrics/metrics.py)
 
 
 ### precision-recall curve
 
-Examples explain how to interpret the precision-recall curve in ideal, random case. 
-What to do if curve of two models look like similar.
+Examples explain how to interpret the precision-recall curve in an ideal, random case. 
+What to do if the curve of two models looks similar.
 
 File:
 * [precision-recall-curve.py](/metrics/precision-recall-curve.py)
